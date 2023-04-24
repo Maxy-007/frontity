@@ -9,6 +9,7 @@ import Page from "./page"
 import Team from "./team" 
 import Loading from "./loading"
 import Error from "./error"
+import Record from "./record"
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link)
@@ -34,6 +35,8 @@ const Root = ({ state }) => {
         <Link link="/">Home</Link>
         <Link link="/team">Teams</Link>
         <Link link="/about-us">About Us</Link>
+        <Link link="/record">Records</Link>
+
       </Menu>
       </HeaderContent>
       </Header>
@@ -41,9 +44,11 @@ const Root = ({ state }) => {
         <Switch>
             <Loading when={data.isFetching} />
             <List when={data.isArchive} />
+            {/* <ListRecords when={data.isRecordCat || data.isRecordArchive} /> */}
             <Post when={data.isPost} />
             <Page when={data.isPage} />
             <Team when={data.isTeam} />
+            <Record when={data.isRecord} />
             <Error when={data.isError} />
         </Switch>
       </Main>

@@ -18,12 +18,18 @@ const settings = {
           "api": "http://localhost/frontity/wp-json",
           "postTypes": [
             {
-              type: "team",
-              endpoint: "team",
-              archive: "/team"
+              type: "record",
+              endpoint: "record",
+              archive: "/record"
             }
           ],
-          "taxonomies": []
+          taxonomies: [
+            {
+              taxonomy: "record_cat",
+              endpoint: "record_cat",
+              postTypeEndpoint: "record"
+            }
+          ]
         }
       }
     },
